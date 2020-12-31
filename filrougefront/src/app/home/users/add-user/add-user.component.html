@@ -1,0 +1,69 @@
+<div class="container"  style="width:50%;background-color: #f8f9fa; opacity:3;">
+
+<form #f="ngForm" >
+  <h2 mat-dialog-title  style="color:deeppink;"> Ajouter Utilisateur</h2>
+  <p>
+    <mat-form-field appearance="legacy"  style="color:deeppink;">
+      <mat-label>NOM</mat-label>
+      <input matInput name="nom" placeholder="Nom" #nom="ngModel"ngModel>
+      <mat-icon  style="color:deeppink;" matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard"  style="color:deeppink;">
+      <mat-label>PRENOM</mat-label>
+      <input matInput name="prenom" placeholder="Prenom" #prenom="ngModel" ngModel>
+      <mat-icon  style="color:deeppink; width: 50px;" matSuffix >sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard"  style="color:deeppink;">
+      <mat-label>PROFIL</mat-label>
+      <input name="profil_id" #profil_id ="ngModel" ngModel matInput placeholder="profil">
+      <mat-icon  style="color:deeppink; width: 50px;" matSuffix >sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+
+    <mat-form-field appearance="standard">
+      <mat-label>ENTER YOUR EMAIL</mat-label>
+      <input name="email" matInput placeholder="pat@example.com" ngModel #email="ngModel"  required>
+      <mat-icon  style="color:deeppink; width: 50px;" matSuffix >sentiment_very_satisfied</mat-icon>
+      <mat-error style="color:deeppink;" *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>ENTER YOUR PASSWORD</mat-label>
+      <input name="email" matInput [type]="hide ? 'password' : 'text' " ngModel #password="ngModel">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon style="color:deeppink;" >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </p>
+
+
+  <p>
+
+      <input  type="file" name="avatar" ngModel #avatar ="ngModel" placeholder="Basic Input" >
+      <mat-icon matSuffix style="color: deeppink">folder</mat-icon>
+
+  </p>
+
+
+</form>
+
+
+
+
+
+
+<mat-dialog-actions>
+  <button  (click)=Postuler(f.value)  style="color:deeppink;"mat-button mat-dialog-close mat-dialog-close='true' >Valider</button>
+
+</mat-dialog-actions>
+
+</div>

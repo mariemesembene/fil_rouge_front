@@ -1,0 +1,64 @@
+<div class="container mt-5" style="color: deeppink">
+  <form style="color: deeppink">
+
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="inputEmail4">Libelle</label>
+        <input style="color: deeppink" type="text" class="form-control" id="inputEmail4" placeholder="Libelle">
+      </div>
+      <div class="form-group col-md-12">
+        <label for="inputPassword4">Descriptif</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+      </div>
+    </div>
+
+
+    <div class="form-row col-md-12">
+      <mat-form-field style="color: deeppink" class="example-chip-list col-md-12">
+      <mat-label  style="color: deeppink">Competences Existantes</mat-label>
+      <mat-chip-list  style="color: deeppink"#chipList aria-label="Fruit selection">
+        <mat-chip
+          *ngFor="let fruit of fruits"
+          [selectable]="selectable"
+          [removable]="removable"
+          (removed)="remove(fruit)">
+          {{fruit}}
+          <mat-icon  style="color: deeppink" matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input
+          placeholder="New fruit..."
+          #fruitInput
+          [formControl]="fruitCtrl"
+          [matAutocomplete]="auto"
+          [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="add($event)">
+      </mat-chip-list>
+        <button  routerLink="addgroupecompetence"  mat-icon-button class="example-icon m-auto" aria-label="Example icon-button with menu icon">
+          <span  style="color: deeppink;" class="iconify" data-icon="entypo:add-user" data-inline="false"></span>
+          <i>Add_Groupe_Competence</i>
+        </button>
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+        <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+          {{fruit}}
+        </mat-option>
+
+      </mat-autocomplete>
+    </mat-form-field>
+
+
+    </div>
+
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input"style="color: deeppink"  type="checkbox" id="gridCheck">
+        <label style="color: deeppink" class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+
+      </div>
+    </div>
+    <button type="submit" style="background-color: deeppink;" class="">Sign in</button>
+
+  </form>
+</div>

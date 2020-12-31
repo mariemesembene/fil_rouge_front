@@ -1,0 +1,50 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark "style="background-color:deeppink ;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"role="button" data-toggle="dropdown">
+        <span class="iconify" data-icon="heroicons-solid:home" data-inline="false"></span>
+        <div class="d-flex justify-content-center">Home </div>
+        </a>
+
+      </li>
+      <li class="nav-item active " >
+        <a class="nav-link"role="button" data-toggle="dropdown">
+        <span class="iconify" data-icon="mdi:animation" data-inline="false"></span>
+       <div class="d-flex justify-content-center"> Briefs </div>
+        </a>
+      </li>
+
+      <li class="nav-item active dropdown" >
+        <a class="nav-link"role="button" data-toggle="dropdown">
+          <span class="iconify" data-icon="clarity:settings-solid" data-inline="false"></span>
+          <div class="d-flex justify-content-center"> Parametres </div>
+        </a>
+        <div class="dropdown-menu">
+          <a routerLink="/home/profilsortie" class="dropdown-item" >Profil_Sortie</a>
+          <a routerLink="/home/referentiels" class="dropdown-item" >Referentiels</a>
+          <a  routerLink="/home/groupescompetences"   class="dropdown-item" >Groupescompetences</a>
+          <a  routerLink="/home/promos"  class="dropdown-item" >Promos</a>
+          <a  routerLink="/home/competences"   class="dropdown-item" >Competences</a>
+
+        </div>
+      </li>
+      <li class="nav-item active dropdown">
+        <a class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <span class="iconify" data-icon="bx:bxs-user"></span>
+          <div class="d-flex justify-content-center">User</div>
+        </a>
+        <div class="dropdown-menu">
+          <a routerLink="/home/user" class="dropdown-item">User</a>
+          <a routerLink="/home/profil"class="dropdown-item">Profil</a>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</nav>

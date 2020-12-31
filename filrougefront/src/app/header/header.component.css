@@ -1,0 +1,10 @@
+span {
+  background: url('https://api.iconify.design/bx:bxs-user.svg') no-repeat center center / contain;
+  content: url('https://api.iconify.design/bx:bxs-user.svg?height=24');
+  vertical-align: -0.125em;
+}
+.iconify {
+  float: left;
+  width: 25px;
+  height: 25px;
+}
