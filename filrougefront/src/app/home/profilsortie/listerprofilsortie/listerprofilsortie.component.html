@@ -1,14 +1,19 @@
-
+<div class="bouton" style="margin-left: 90%">
+  <button  routerLink="addProfilsortie"  mat-icon-button class="example-icon m-auto" aria-label="Example icon-button with menu icon">
+    <span  style="color: deeppink;" class="iconify" data-icon="entypo:add-user" data-inline="false"></span>
+    <i>Add_ProfilSortie</i>
+  </button>
+</div>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> ID </th>
-    <td mat-cell *matCellDef="let profilsortie"> {{profilsortie.id}} </td>
+    <td mat-cell *matCellDef="let profils"> {{profils.id}} </td>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="libelle">
     <th mat-header-cell *matHeaderCellDef> libelle </th>
-    <td mat-cell *matCellDef="let profilsortie"> {{profilsortie.libelle}} </td>
+    <td mat-cell *matCellDef="let profils"> {{profils.libelle}} </td>
   </ng-container>
 
 
@@ -16,22 +21,14 @@
     <th mat-header-cell *matHeaderCellDef>actions</th>
 
     <mat-header-cell  *matHeaderCellDef style="color:white "> Actions </mat-header-cell>
-    <mat-cell *matCellDef="let profilsorties" >
-
-      <button  mat-icon-button class="example-icon m-auto" aria-label="Example icon-button with menu icon">
-            <span class="material-icons" style="color: deeppink;">
-              visibility
-                </span>
-        <i>Details</i>
-      </button>
-      <button  mat-icon-button class="example-icon m-auto" aria-label="Example icon-button with menu icon">
+    <mat-cell *matCellDef="let profil" >
+      <button  routerLink="putprofilsortie/{{profil.id}}" mat-icon-button class="example-icon m-auto" aria-label="Example icon-button with menu icon">
             <span class="material-icons" style="color: deeppink;">
                 edit
                 </span>
         <i> Modifier</i>
       </button>
-
-      <button   mat-icon-button class="example-icon m-auto" aria-label="Example icon-button with menu icon">
+      <button (click)="delete(profil.id)"  mat-icon-button class="example-icon m-auto" aria-label="Example icon-button with menu icon">
             <span class="material-icons" style="color: deeppink;">
                 delete
                 </span>

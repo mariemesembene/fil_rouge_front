@@ -21,6 +21,9 @@ import {AddPromoComponent} from './home/promos/add-promo/add-promo.component';
 import {AddgroupecompetenceComponent} from './home/groupescompetences/addgroupecompetence/addgroupecompetence.component';
 import {AddcompetencesComponent} from './home/competences/addcompetences/addcompetences.component';
 import {ListerreferentielsComponent} from './home/referentiels/listerreferentiels/listerreferentiels.component';
+import {AuthGuard} from './authguard.service';
+import {PutprofilsortieComponent} from './home/profilsortie/putprofilsortie/putprofilsortie.component';
+import {ModifierUserComponent} from './home/users/modifier-user/modifier-user.component';
 
 let routes: Routes;
 routes = [
@@ -36,6 +39,7 @@ routes = [
   {
     path: 'home',
     component: HomeComponent,
+
     children: [
       {
         path: 'profilsortie',
@@ -49,6 +53,10 @@ routes = [
           {
             path: 'addProfilsortie',
             component: AddprofilsortieComponent
+
+          },{
+            path: 'putprofilsortie/:id',
+            component:PutprofilsortieComponent
           }
         ]
       },
@@ -59,6 +67,10 @@ routes = [
           {
             path: 'addUser',
             component: AddUserComponent}
+          ,
+          {
+            path: 'modifierUser',
+            component: ModifierUserComponent}
           ,
           {
             path: 'listerUser',

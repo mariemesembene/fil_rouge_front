@@ -1,12 +1,12 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {MatAutocomplete, MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
-import {MatChipInputEvent} from '@angular/material/chips';
-import {map, startWith} from 'rxjs/operators';
-import {Observable} from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-
+import { ElementRef, ViewChild} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {MatAutocompleteSelectedEvent, MatAutocomplete} from '@angular/material/autocomplete';
+import {MatChipInputEvent} from '@angular/material/chips';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 @Component({
   selector: 'app-add-promo',
   templateUrl: './add-promo.component.html',
@@ -23,15 +23,15 @@ export class AddPromoComponent implements OnInit {
   separatorKeysCodes: number[] = [ENTER, COMMA];
   fruitCtrl = new FormControl();
   filteredFruits: Observable<string[]>;
-  fruits: string[] = ['Développeur web/mobile', 'Data Artisan' , 'Référent Digital'];
-
+  fruits: string[]= ['Développeur web/mobile','Data Artisan','Référent Digital'];
+  emails:string []=['gueyefadel22@gmail.com','douvewane@gmail.com','pascal32@yahoo.fr']
   @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
 
-  constructor(private _formBuilder: FormBuilder) {
+  constructor() {
     this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
       startWith(null),
-      map((fruit: string | null) => fruit ? this._filter(fruit) : this.allFruits.slice()));
+      map((fruit: string | null) => fruit ? this._filter(fruit) : this.fruits.slice()));
   }
 
   add(event: MatChipInputEvent): void {
@@ -70,21 +70,9 @@ export class AddPromoComponent implements OnInit {
 
     return this.fruits.filter(fruit => fruit.toLowerCase().indexOf(filterValue) === 0);
   }
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
-  isEditable = false;
 
 
-
-  // tslint:disable-next-line:typedef
-  ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
+  ngOnInit(): void {
   }
-
 
 }

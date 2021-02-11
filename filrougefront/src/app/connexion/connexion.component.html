@@ -12,7 +12,7 @@
 <div class="limiter">
   <div class="container-login100" style="background-image: url('assets/images/44061619-ordinateur-portable-sur-un-bureau-en-bois-vue-de-dessus-copie-espace.jpg');">
     <div class="wrap-login100">
-      <form class="login100-form validate-form">
+      <form  class="login100-form validate-form">
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>
 					</span>
@@ -22,14 +22,15 @@
 					</span>
 
         <div class="wrap-input100 validate-input" data-validate = "Enter username">
-          <input [(ngModel)]="registerUserData.email" class="input100" type="text" name="email" placeholder="email" ng-model="email" required>
+          <input [(ngModel)]="registerUserData.email" class="input100" type="text" name="email" placeholder="email" ng-model="email" required type="email">
           <span class="focus-input100" data-placeholder="&#xf207;"></span>
 
         </div>
 
 
         <div class="wrap-input100 validate-input" data-validate="Enter password">
-          <input  [(ngModel)]="registerUserData.password" class="input100" name="password"  type="password"  placeholder="Password"  ng-model="password" required>
+          <input  [(ngModel)]="registerUserData.password" class="input100" name="password"  type="password"  placeholder="Password"  ng-model="password" required type="password" >
+
 
           <span class="focus-input100" data-placeholder="&#xf191;"></span>
 
@@ -37,7 +38,7 @@
 
 
         <div class="container-login100-form-btn">
-          <button  (click)="registerUser()" routerLink="/home" class="login100-form-btn" >
+          <button  routerLink="/home" (click)="registerUser()"  class="login100-form-btn" >
             Login
           </button>
         </div>

@@ -20,6 +20,7 @@
         </a>
       </li>
 
+
       <li class="nav-item active dropdown" >
         <a class="nav-link"role="button" data-toggle="dropdown">
           <span class="iconify" data-icon="clarity:settings-solid" data-inline="false"></span>
@@ -43,6 +44,12 @@
           <a routerLink="/home/user" class="dropdown-item">User</a>
           <a routerLink="/home/profil"class="dropdown-item">Profil</a>
         </div>
+      </li>
+      <li class="nav-item active  "  >
+        <a class="nav-link"role="button" data-toggle="dropdown" (click)="logout()">
+          <span class="iconify" data-icon="mi:log-out" data-inline="false"></span>
+          <div class="d-flex justify-content-center"> log_out</div>
+        </a>
       </li>
     </ul>
 

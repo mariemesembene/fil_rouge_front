@@ -1,1 +1,10 @@
-<p>addprofilsortie works!</p>
+<form #f="ngForm" style="color: deeppink">
+
+
+    <div class="form-group col-md-12">
+      <label for="inputEmail4">Profil Sortie</label>
+      <input ngModel  #prenom required matInput name="libelle"style="color: deeppink" type="text" class="form-control" id="inputEmail4" placeholder="Profil Sortie">
+    </div>
+
+  <button (click)="Postuler(f.value)" type="submit" style="background-color: deeppink;" class="">Sign in</button>
+</form>

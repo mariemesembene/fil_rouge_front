@@ -1,14 +1,14 @@
 <div class="container mt-5" style="color: deeppink">
-  <form style="color: deeppink">
+  <form #f="ngForm" style="color: deeppink">
 
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputEmail4">Libelle</label>
-        <input style="color: deeppink" type="text" class="form-control" id="inputEmail4" placeholder="Libelle">
+        <input style="color: deeppink"  name="libelle"type="text" class="form-control" id="inputEmail4" placeholder="Libelle">
       </div>
       <div class="form-group col-md-6">
         <label for="inputPassword4">Presentation</label>
-        <input style="color: deeppink" type="password" class="form-control" id="inputPassword4" placeholder="Presentation">
+        <input style="color: deeppink" name="presentation" type="text" class="form-control" id="inputPassword4" placeholder="Presentation">
       </div>
     </div>
 
@@ -17,24 +17,24 @@
       <div class="form-group col-md-4">
         <label for="inputState">Groupe de
           Compétences</label>
-        <select id="inputState" class="form-control">
+        <select name="grpecompetences" id="inputState" class="form-control">
           <option selected>Choose...</option>
           <option>competence1</option>
-          <option>competence2/option>
+          <option>competence2</option>
         </select>
       </div>
       <div class="form-group col-md-4">
         <label for="inputPassword4">Critere Evaluation </label>
-        <input style="color: deeppink" type="text" class="form-control" id="inputPassword4" placeholder="Critere Evaluation">
+        <input name="CritereEvaluation" style="color: deeppink" type="text" class="form-control" id="inputPassword4" placeholder="Critere Evaluation">
       </div>
       <div class="form-group col-md-4">
         <label for="inputPassword4">Critere Admission</label>
-        <input style="color: deeppink" type="text" class="form-control" id="inputPassword4" placeholder="Critere Admission">
+        <input  name="CritereAdmission<" style="color: deeppink" type="text" class="form-control" id="inputPassword4" placeholder="Critere Admission">
       </div>
 
     </div>
     <div class="custom-file">
-      <input style="color: deeppink" type="file" class="custom-file-input" id="inputGroupFile04">
+      <input  name="avatar" style="color: deeppink" type="file" class="custom-file-input" id="inputGroupFile04">
       <label class="custom-file-label" for="inputGroupFile04">Upload Programme</label>
     </div>
 
@@ -46,7 +46,7 @@
         </label>
       </div>
     </div>
-    <button type="submit" style="background-color: deeppink;" class="">Sign in</button>
+    <button  (click)=Postuler(f.value) type="submit" style="background-color: deeppink;" class="">Sign in</button>
 
   </form>
 </div>

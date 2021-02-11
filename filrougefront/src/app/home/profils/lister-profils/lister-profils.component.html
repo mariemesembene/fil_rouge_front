@@ -18,13 +18,14 @@
     <mat-header-cell  *matHeaderCellDef style="color:white "> Actions </mat-header-cell>
     <mat-cell *matCellDef="let profil" >
 
-      <button   mat-icon-button class="example-icon m-auto" aria-label="Example icon-button with menu icon">
+      <button  (click)="delete(profil.id)" mat-icon-button class="example-icon m-auto" aria-label="Example icon-button with menu icon">
             <span class="material-icons" style="color: deeppink;">
                 delete
                 </span>
         <i>Delete</i>
       </button>
     </mat-cell>
+
   </ng-container>
 
 

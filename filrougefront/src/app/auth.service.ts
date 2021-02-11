@@ -13,7 +13,13 @@ export class AuthService {
     return this.http.post<any>(environment.url+'login', user);
   }
   registerUser(user: any){
-    return this.http.post<any>('http://127.0.0.1:8000/api/admin/users', user);
+    return this.http.post<any>(environment.url+'admin/users', user);
+  }
+  registerReferentiel(referentiel: any){
+    return this.http.post<any>(environment.url+'admin/referentiels',referentiel);
+  }
+  registerProflSortie(profilsortie: any){
+    return this.http.post<any>(environment.url+'admin/profilsorties', profilsortie);
   }
   loggedIn(){
     return !!localStorage.getItem('token')
@@ -23,7 +29,7 @@ export class AuthService {
   }
 
   getUser(): Observable<any>{
-    return this.http.get<any>(environment.url+'admin/users')
+    return this.http.get<any>(environment.url+'admin/users?statut=true')
   }
   /*getUserbyId(id:number):User
    {
@@ -37,6 +43,31 @@ export class AuthService {
     return this.http.get<any>(environment.url+'admin/profils')
   }
   getProfilsortie(): Observable<any>{
-    return this.http.get<any>("http://127.0.0.1:8000/api/admin/profilsorties")
+    return this.http.get<any>("http://127.0.0.1:8000/api/admin/profilsorties?statut=false")
   }
+  deleteprofilsortie(id:any){
+    return this.http.delete(environment.url+'admin/profilsortie/'+id)
+  }
+  deleteprofil(id:any){
+    return this.http.delete(environment.url+'admin/profils/'+id)
+  }
+  deleteuser(id:any){
+    return this.http.delete(environment.url+'admin/users/'+id)
+  }
+  logout(){
+    localStorage.removeItem("token");
+  }
+  updateprofilsortie(data:any){
+    return this.http.put(environment.url+'admin/profilsortie/'+data.id,data)
+  }
+  getprofilsortieById(id:number,data:any):any
+  {
+    const profilsortie = data.find(
+      (p:any) => {
+        return p.id===id;
+      }
+    );
+    return profilsortie;
+  }
+
 }

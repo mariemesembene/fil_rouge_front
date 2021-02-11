@@ -20,7 +20,7 @@ import { CompetencesComponent } from './home/competences/competences.component';
 import { ListercompetencesComponent } from './home/competences/listercompetences/listercompetences.component';
 import { PromosComponent } from './home/promos/promos.component';
 import { ListerpromosComponent } from './home/promos/listerpromos/listerpromos.component';
-import {FormsModule, NgModel, ReactiveFormsModule} from '@angular/forms';
+import {FormGroup, FormsModule, NgModel, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
@@ -39,6 +39,10 @@ import { AddcompetencesComponent } from './home/competences/addcompetences/addco
 import { ListerreferentielsComponent } from './home/referentiels/listerreferentiels/listerreferentiels.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatNativeDateModule} from '@angular/material/core';
+import { PutprofilsortieComponent } from './home/profilsortie/putprofilsortie/putprofilsortie.component';
+import { ModifierUserComponent } from './home/users/modifier-user/modifier-user.component';
+
 
 
 @NgModule({
@@ -67,6 +71,9 @@ import {MatStepperModule} from '@angular/material/stepper';
     ListegroupecompetenceComponent,
     AddcompetencesComponent,
     ListerreferentielsComponent,
+    PutprofilsortieComponent,
+    ModifierUserComponent,
+
 
   ],
   imports: [
@@ -81,7 +88,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatMenuModule,
     ReactiveFormsModule,
     MatChipsModule,
-    MatStepperModule
+    MatStepperModule,
+    MatNativeDateModule,
 
 
 

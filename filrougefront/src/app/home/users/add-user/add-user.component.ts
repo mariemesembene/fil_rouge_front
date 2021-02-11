@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../../auth.service';
-import {FormControl, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-add-user',
@@ -8,8 +8,13 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
-
-  constructor(private service: AuthService){}
+  registerForm: FormGroup;
+  submitted = false;
+  onReset() {
+    this.submitted = false;
+    this. registerForm.reset();
+  }
+  constructor(private service: AuthService,private formBuilder: FormBuilder){}
 
   email = new FormControl('', [Validators.required, Validators.email]);
 
@@ -22,31 +27,32 @@ export class AddUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
   hide = true;
-  avatar: any
+  avatar: any;
 
 
 
   Postuler(data:any){
-    console.log(data)
+    console.log(data);
     const formdata=new FormData();
-    formdata.append("email",data.email)
-    formdata.append("prenom",data.nom)
-    formdata.append("nom",data.nom)
-    formdata.append("password",data.password)
-    formdata.append("profil_id",data.profil)
-    formdata.append("avatar",this.avatar,this.avatar.name)
+    formdata.append("email",data.email);
+    formdata.append("prenom",data.nom);
+    formdata.append("nom",data.nom);
+    formdata.append("password",data.password);
+    formdata.append("profil_id",data.profil_id);
+    formdata.append("avatar",this.avatar,this.avatar.name);
     this.service.registerUser(formdata).subscribe(
-      (response)=>
+      (response) =>
       {
-        console.log (response)
+        console.log (response);
       },
       (error) =>
       {
-        console.log(error)
+        console.log(error);
       }
-    )
+    );
 
   }
 

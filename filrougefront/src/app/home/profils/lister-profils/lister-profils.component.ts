@@ -33,6 +33,12 @@ export class ListerProfilsComponent implements OnInit {
 
   }
   constructor(private authservice: AuthService){}
-
+  delete(id:any){
+    this.authservice.deleteprofil(id).subscribe(
+      (response:any)=>{
+        alert("success")
+      }
+    )
+  }
 
 }

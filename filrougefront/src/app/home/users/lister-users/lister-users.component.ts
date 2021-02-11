@@ -33,4 +33,11 @@ export class ListerUsersComponent implements OnInit {
       }
     );
   }
+  delete(id:any){
+    this.authservice.deleteuser(id).subscribe(
+      (response:any)=>{
+        alert("success")
+      }
+    )
+  }
 }

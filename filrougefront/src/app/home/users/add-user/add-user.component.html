@@ -1,69 +1,77 @@
-<div class="container"  style="width:50%;background-color: #f8f9fa; opacity:3;">
+<div class="container mt-5" style="color: deeppink">
+  <form [formGroup]="registerForm"  #f="ngForm"  style="color: deeppink">
 
-<form #f="ngForm" >
-  <h2 mat-dialog-title  style="color:deeppink;"> Ajouter Utilisateur</h2>
-  <p>
-    <mat-form-field appearance="legacy"  style="color:deeppink;">
-      <mat-label>NOM</mat-label>
-      <input matInput name="nom" placeholder="Nom" #nom="ngModel"ngModel>
-      <mat-icon  style="color:deeppink;" matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="standard"  style="color:deeppink;">
-      <mat-label>PRENOM</mat-label>
-      <input matInput name="prenom" placeholder="Prenom" #prenom="ngModel" ngModel>
-      <mat-icon  style="color:deeppink; width: 50px;" matSuffix >sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="standard"  style="color:deeppink;">
-      <mat-label>PROFIL</mat-label>
-      <input name="profil_id" #profil_id ="ngModel" ngModel matInput placeholder="profil">
-      <mat-icon  style="color:deeppink; width: 50px;" matSuffix >sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
-  <p>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Prenom</label>
+        <input  ngModel #prenom ="ngModel" required matInput name="prenom" style="color: deeppink" type="text" class="form-control"placeholder="Prenom">
+      <div *ngIf="prenom.invalid">
+        veuillez entrer le prenom
+      </div>
+      </div>
 
-    <mat-form-field appearance="standard">
-      <mat-label>ENTER YOUR EMAIL</mat-label>
-      <input name="email" matInput placeholder="pat@example.com" ngModel #email="ngModel"  required>
-      <mat-icon  style="color:deeppink; width: 50px;" matSuffix >sentiment_very_satisfied</mat-icon>
-      <mat-error style="color:deeppink;" *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="standard">
-      <mat-label>ENTER YOUR PASSWORD</mat-label>
-      <input name="email" matInput [type]="hide ? 'password' : 'text' " ngModel #password="ngModel">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-        <mat-icon style="color:deeppink;" >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </button>
-    </mat-form-field>
-  </p>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Nom</label>
+        <input ngModel #nom ="ngModel"required matInput name="nom"  style="color: deeppink" type="text" class="form-control"  placeholder="Nom">
+        <div *ngIf="nom.invalid">
+          veuillez entrer le nom
+        </div>
+      </div>
+
+    </div>
 
 
-  <p>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Password</label>
+        <input  ngModel #password="ngModel" required matInput name="password"   style="color: deeppink" type="password" class="form-control"  placeholder="Password">
+        <div *ngIf="password.invalid">
+          veuillez entrer le mot de passe
+        </div>
+      </div>
 
-      <input  type="file" name="avatar" ngModel #avatar ="ngModel" placeholder="Basic Input" >
-      <mat-icon matSuffix style="color: deeppink">folder</mat-icon>
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Email</label>
+        <input name="email"  ngModel #email="ngModel" required matInput style="color: deeppink"  type="email" class="form-control"  placeholder="Email">
+        <div *ngIf="email.invalid">
+          veuillez entrer l'email
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Profil</label>
+        <select  ngModel #profil_id="ngModel" required  name="profil_id"  class="custom-select" >
+          <option selected></option>
+          <option value=24>Admin</option>
+          <option value=8>Apprenant</option>
+          <option value=5>Formateur</option>
+          <option value=15>CM</option>
+        </select>
+        <div *ngIf="prenom.invalid">
+          veuillez entrer le profil
+        </div>
+      </div>
 
-  </p>
+
+    </div>
+    <div class="custom-file">
+      <input  ngModel #avatar="ngModel" (change)="selectedFile($event.target.files)" required  name="avatar"style="color: deeppink" type="file" class="custom-file-input" id="inputGroupFile04">
+      <label class="custom-file-label" for="inputGroupFile04">Upload avatar</label>
+      <div *ngIf="avatar.invalid">
+        veuillez entrer l'avatar
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="form-check">
+        <input formControlName="acceptTerms" id="acceptTerms" class="form-check-input"  style="color: deeppink"  type="checkbox" >
+        <label style="color: deeppink" class="form-check-label" >
+          Check me out
+        </label>
+      </div>
+    </div>
+    <button [disabled]="f.invalid"  (click)=Postuler(f.value)  type="submit" style="background-color: deeppink;" class="">Register</button>
+    <button type="reset" (click)="onReset()"   style="background-color: deeppink;" class="">Cancel</button>
 
 
-</form>
-
-
-
-
-
-
-<mat-dialog-actions>
-  <button  (click)=Postuler(f.value)  style="color:deeppink;"mat-button mat-dialog-close mat-dialog-close='true' >Valider</button>
-
-</mat-dialog-actions>
-
+  </form>
 </div>
