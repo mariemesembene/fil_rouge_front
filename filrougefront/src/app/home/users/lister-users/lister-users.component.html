@@ -44,13 +44,13 @@
     <mat-cell *matCellDef="let profil" >
 
 
-      <button  mat-icon-button class="example-icon m-auto" aria-label="Example icon-button with menu icon">
+      <button routerLink="detailsUser" mat-icon-button class="example-icon m-auto" aria-label="Example icon-button with menu icon">
             <span class="material-icons " style="color: deeppink;">
               visibility
                 </span>
         <i> Details</i>
       </button>
-      <button routerLink="modifierUser" mat-icon-button class="example-icon m-auto" aria-label="Example icon-button with menu icon">
+      <button  routerLink="modifierUser/{{profil.id}}" mat-icon-button class="example-icon m-auto" aria-label="Example icon-button with menu icon">
             <span class="material-icons" style="color: deeppink;">
                 edit
                 </span>
@@ -71,5 +71,11 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+<mat-paginator
+  [length]="50"
+  [pageSize]="size"
+  [pageIndex]=""
+  [pageSizeOptions]="[10]"
+  (page)="pageEvent = pageClick($event)">
+</mat-paginator>
 

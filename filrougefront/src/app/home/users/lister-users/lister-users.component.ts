@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {AuthService} from '../../../auth.service';
-import {MatPaginator} from '@angular/material/paginator';
+import {MatPaginator, PageEvent} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {User} from '../../../../modules/User';
 
@@ -9,14 +9,19 @@ import {User} from '../../../../modules/User';
   templateUrl: './lister-users.component.html',
   styleUrls: ['./lister-users.component.css']
 })
+
 export class ListerUsersComponent implements OnInit {
-  constructor(private authservice: AuthService){}
+  @ViewChild(MatPaginator) paginator: MatPaginator ;
+
+
+  constructor(private authservice: AuthService ){}
   displayedColumns: string[] = ['id', 'avatar', 'nom', 'prenom', 'email', 'action' ];
   dataSource: any;
 
   ngOnInit(): void  {
-    this.listeruser();
 
+    this.listeruser();
+    this.dataSource.paginator = this.paginator;
   }
   // tslint:disable-next-line:typedef
   listeruser(){
@@ -39,5 +44,9 @@ export class ListerUsersComponent implements OnInit {
         alert("success")
       }
     )
+  }
+
+  pageClick(event:PageEvent){
+    console.log(event)
   }
 }

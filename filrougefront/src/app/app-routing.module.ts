@@ -24,12 +24,13 @@ import {ListerreferentielsComponent} from './home/referentiels/listerreferentiel
 import {AuthGuard} from './authguard.service';
 import {PutprofilsortieComponent} from './home/profilsortie/putprofilsortie/putprofilsortie.component';
 import {ModifierUserComponent} from './home/users/modifier-user/modifier-user.component';
+import {DetailsUserComponent} from './home/users/details-user/details-user.component';
 
 let routes: Routes;
 routes = [
   {
     path: '',
-    redirectTo: '/connexion',
+    redirectTo: '/vconnexion',
     pathMatch: 'full'
   },
   {
@@ -69,8 +70,12 @@ routes = [
             component: AddUserComponent}
           ,
           {
-            path: 'modifierUser',
+            path: 'modifierUser/:id',
             component: ModifierUserComponent}
+          ,
+          {
+            path: 'detailsUser',
+            component: DetailsUserComponent}
           ,
           {
             path: 'listerUser',

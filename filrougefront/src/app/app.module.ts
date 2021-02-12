@@ -42,6 +42,8 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatNativeDateModule} from '@angular/material/core';
 import { PutprofilsortieComponent } from './home/profilsortie/putprofilsortie/putprofilsortie.component';
 import { ModifierUserComponent } from './home/users/modifier-user/modifier-user.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { DetailsUserComponent } from './home/users/details-user/details-user.component';
 
 
 
@@ -73,6 +75,7 @@ import { ModifierUserComponent } from './home/users/modifier-user/modifier-user.
     ListerreferentielsComponent,
     PutprofilsortieComponent,
     ModifierUserComponent,
+    DetailsUserComponent,
 
 
   ],
@@ -90,7 +93,8 @@ import { ModifierUserComponent } from './home/users/modifier-user/modifier-user.
     MatChipsModule,
     MatStepperModule,
     MatNativeDateModule,
-
+    BrowserModule,
+    NgxPaginationModule
 
 
   ],

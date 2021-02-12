@@ -39,8 +39,11 @@ export class AuthService {
      return user;
 
   }*/
+  getCompetences(): Observable<any>{
+    return this.http.get<any>(environment.url+'admin/competences?statut=false')
+  }
   getProfil(): Observable<any>{
-    return this.http.get<any>(environment.url+'admin/profils')
+    return this.http.get<any>(environment.url+'admin/profils?statut=false')
   }
   getProfilsortie(): Observable<any>{
     return this.http.get<any>("http://127.0.0.1:8000/api/admin/profilsorties?statut=false")
@@ -60,6 +63,10 @@ export class AuthService {
   updateprofilsortie(data:any){
     return this.http.put(environment.url+'admin/profilsortie/'+data.id,data)
   }
+  updateuser(data:any,id:number){
+    return this.http.put(environment.url+'admin/users/'+id,data)
+  }
+
   getprofilsortieById(id:number,data:any):any
   {
     const profilsortie = data.find(
@@ -70,4 +77,8 @@ export class AuthService {
     return profilsortie;
   }
 
+  getUserById(id: number): Observable<any>{
+    return this.http.get<any>(environment.url+'admin/users/'+id)
+  }
 }
+

@@ -1,1 +1,65 @@
-<p>modifier-user works!</p>
+<div class="container mt-5" style="color: deeppink">
+  <form  #f="ngForm"  style="color: deeppink">
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Prenom</label>
+          <input  matInput name="prenom" ngModel style="color: deeppink" type="text" class="form-control" >
+
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Nom</label>
+        <input  matInput name="nom"  ngModel style="color: deeppink" type="text" class="form-control"  >
+
+      </div>
+
+    </div>
+
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Password</label>
+        <input  matInput name="password"  ngModel   style="color: deeppink" type="password" class="form-control"  >
+
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Email</label>
+        <input name="email"  ngModel   matInput style="color: deeppink"  type="email" class="form-control" >
+
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Profil</label>
+        <select ngModel   name="profil_id"  class="custom-select" >
+          <option selected></option>
+          <option value=24>Admin</option>
+          <option value=8>Apprenant</option>
+          <option value=5>Formateur</option>
+          <option value=15>CM</option>
+        </select>
+
+      </div>
+
+
+    </div>
+    <div class="custom-file">
+      <input ngModel (change)="onFileSelected($event.target.files)" required  name="avatar"style="color: deeppink" type="file" class="custom-file-input" id="inputGroupFile04">
+      <label class="custom-file-label" for="inputGroupFile04">Upload avatar</label>
+
+    </div>
+
+    <div class="form-group">
+      <div class="form-check">
+        <input  id="acceptTerms" class="form-check-input"  style="color: deeppink"  type="checkbox" >
+        <label style="color: deeppink" class="form-check-label" >
+          Check me out
+        </label>
+      </div>
+    </div>
+    <button   (click)="modifierUser()"  type="submit" style="background-color: deeppink;" class="">Register</button>
+    <button type="reset"   style="background-color: deeppink;" class="">Cancel</button>
+
+
+  </form>
+</div>

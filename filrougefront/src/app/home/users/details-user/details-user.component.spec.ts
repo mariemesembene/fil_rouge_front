@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PutprofilsortieComponent } from './putprofilsortie.component';
+import { DetailsUserComponent } from './details-user.component';
 
-describe('PutprofilsortieComponent', () => {
-  let component: PutprofilsortieComponent;
-  let fixture: ComponentFixture<PutprofilsortieComponent>;
+describe('DetailsUserComponent', () => {
+  let component: DetailsUserComponent;
+  let fixture: ComponentFixture<DetailsUserComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PutprofilsortieComponent ]
+      declarations: [ DetailsUserComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PutprofilsortieComponent);
+    fixture = TestBed.createComponent(DetailsUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

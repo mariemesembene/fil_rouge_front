@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../../auth.service';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-add-user',
@@ -8,11 +8,11 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
-  registerForm: FormGroup;
+  f: NgForm;
   submitted = false;
   onReset() {
     this.submitted = false;
-    this. registerForm.reset();
+    this. f.reset();
   }
   constructor(private service: AuthService,private formBuilder: FormBuilder){}
 
@@ -47,13 +47,14 @@ export class AddUserComponent implements OnInit {
       (response) =>
       {
         console.log (response);
+
       },
       (error) =>
       {
         console.log(error);
       }
     );
-
+    alert("success")
   }
 
   selectedFile(files: FileList)
