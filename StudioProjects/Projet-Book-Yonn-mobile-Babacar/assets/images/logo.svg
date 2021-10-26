@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="148.893" height="114.105" viewBox="0 0 148.893 114.105">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #454f63;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #2884ff;
+      }
+
+      .cls-2 {
+        stroke: rgba(0,0,0,0);
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="Groupe_620" data-name="Groupe 620" transform="translate(-113.296 -249.448)">
+    <path id="Tracé_259" data-name="Tracé 259" class="cls-1" d="M47.89,53.962H90.97a19.011,19.011,0,0,1,19.009,19.012h0A19.009,19.009,0,0,1,90.97,91.983H66.9A19.011,19.011,0,0,1,47.89,72.974v-6.1L36.411,57.534a2.012,2.012,0,0,1,1.271-3.572Z" transform="translate(77.631 236.594)"/>
+    <path id="Tracé_260" data-name="Tracé 260" class="cls-1" d="M135.831,34.29H92.879A18.953,18.953,0,0,0,73.926,53.243h0A18.955,18.955,0,0,0,92.879,72.2h24a18.957,18.957,0,0,0,18.955-18.955V47.157l11.445-9.307a2,2,0,0,0-1.267-3.559Z" transform="translate(113.685 215.158)"/>
+    <g id="Groupe_198" data-name="Groupe 198" transform="translate(187.61 324.757)">
+      <path id="Union_5" data-name="Union 5" class="cls-2" d="M10.958,32.28H9.921a9.921,9.921,0,0,1,0-19.842h2.538A20.071,20.071,0,0,1,31.022,0H72.34a1.709,1.709,0,0,1,1.079,3.033l-9.748,7.925v7.465A13.858,13.858,0,0,1,49.813,32.28Z" transform="translate(0 0)"/>
+      <ellipse id="Ellipse_102" data-name="Ellipse 102" class="cls-3" cx="6.515" cy="6.515" rx="6.515" ry="6.515" transform="translate(13.919 25.765)"/>
+      <ellipse id="Ellipse_103" data-name="Ellipse 103" class="cls-3" cx="6.515" cy="6.515" rx="6.515" ry="6.515" transform="translate(38.47 25.765)"/>
+    </g>
+  </g>
+</svg>
