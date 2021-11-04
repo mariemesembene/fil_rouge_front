@@ -14,7 +14,7 @@ class settingsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Paramétres"),
       ),
-      body: Bodysettings(),
+      // body: Bodysettings(),
     );
   }
 }
