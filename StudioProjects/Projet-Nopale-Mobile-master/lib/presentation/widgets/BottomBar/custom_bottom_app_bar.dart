@@ -36,8 +36,11 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
                 Icons.headset_mic,
                 size: size,
                 color: defaultColor,
+
               ),
-              onPressed: () {},
+              onPressed: () {
+                navigateToProfil();
+              },
             ),
             const SizedBox.shrink(),
             IconButton(
@@ -46,7 +49,9 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
                 size: size,
                 color: defaultColor,
               ),
-              onPressed: () {},
+              onPressed: () {
+                navigateToHelp();
+              },
             ),
             IconButton(
               icon: const Icon(
@@ -54,11 +59,23 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
                 size: size,
                 color: defaultColor,
               ),
-              onPressed: () {},
+              onPressed: () {
+                navigateToSettings();
+              },
             )
           ],
         ),
       ),
     );
   }
+  void navigateToProfil() {
+    Navigator.pushNamed(context, '/profil');
+  }
+  void navigateToSettings() {
+    Navigator.pushNamed(context, '/settings');
+  }
+  void navigateToHelp() {
+    Navigator.pushNamed(context, '/help');
+  }
 }
+

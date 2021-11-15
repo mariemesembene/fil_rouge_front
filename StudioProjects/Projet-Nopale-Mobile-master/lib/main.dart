@@ -5,6 +5,7 @@ import 'package:projet_nopale_mobile/presentation/Theme/theme.dart';
 import 'package:projet_nopale_mobile/constants/routers/app_router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:projet_nopale_mobile/presentation/screens/HelpScreen/help_screen.dart';
+import 'package:projet_nopale_mobile/presentation/screens/ProfilScreen/components/profil_screen.dart';
 import 'package:projet_nopale_mobile/presentation/screens/settings/settings_screen.dart';
 
 void main() {
@@ -26,8 +27,8 @@ class MyApp extends StatelessWidget {
       ],
       theme: theme(),
       debugShowCheckedModeBanner: false,
-      // onGenerateRoute: _appRouter.onGenerateRoute,
-         home:  settingsScreen(),
+       onGenerateRoute: _appRouter.onGenerateRoute,
+        
     );
   }
 }

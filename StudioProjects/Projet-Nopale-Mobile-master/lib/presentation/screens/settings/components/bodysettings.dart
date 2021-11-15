@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:projet_nopale_mobile/constants/SizeConfig/size_config.dart';
 import 'package:projet_nopale_mobile/constants/colors/app_colors.dart';
 import 'package:projet_nopale_mobile/helpers/helpers.dart';
+import 'package:projet_nopale_mobile/presentation/widgets/BottomBar/custom_bottom_app_bar.dart';
 import 'package:projet_nopale_mobile/presentation/widgets/Buttons/DefaultButton/default_button.dart';
 
 class Bodysettings extends StatelessWidget {
@@ -20,7 +22,8 @@ class Bodysettings extends StatelessWidget {
               color: greenColor,
               text: "Désactiver Carte",
               press: () {
-                Navigator.pushNamed(context, '/signin');
+                showAlertDialog(context);
+
               },
             ),
 
@@ -29,7 +32,8 @@ class Bodysettings extends StatelessWidget {
                 color: greenColor,
                 text: "Renouveller Carte",
                 press: () {
-                  Navigator.pushNamed(context, '/signin');
+                  showAlertDialog(context);
+
                 },
               ),
               SizedBox(height: SizeConfig.screenHeight * 0.13),
@@ -37,7 +41,8 @@ class Bodysettings extends StatelessWidget {
                 color: greenColor,
                 text: "Désactiver Compte",
                 press: () {
-                  Navigator.pushNamed(context, '/signin');
+
+                  showAlertDialog(context);
                 },
               ),
 
@@ -47,7 +52,39 @@ class Bodysettings extends StatelessWidget {
         ),
       ),
     );
+
   }
 
 
+  showAlertDialog(BuildContext context) {
+
+    // set up the buttons
+    Widget cancelButton = TextButton(
+      child: Text("Annuler"),
+      onPressed:  () {},
+    );
+    Widget continueButton = TextButton(
+      child: Text("Continue"),
+      onPressed:  () {},
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("Désactivation"),
+      content: Text("Voulez vous vraiment dèsactiver la carte?"),
+      actions: [
+        cancelButton,
+        continueButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+  
 }

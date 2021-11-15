@@ -27,6 +27,7 @@ class Bodyp extends StatelessWidget {
                   Container(
                     width: 100,
                     height: 75,
+
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage('lib/presentation/assets/images/logo/logotel.png'),
